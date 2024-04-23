@@ -1,5 +1,4 @@
 import React from "react";
-import "@/app/Portfolio/Portfolio.css";
 import Card from "@/ui/components/card/card";
 import Data from "@/data/projet.json"
 
