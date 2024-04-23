@@ -1,0 +1,49 @@
+$color1: #171940;
+$color2: #8ed979;
+$color3: #91aaf2;
+$color4: #d9ad77;
+$color5: #ffffff;
+
+.topnav {
+  background-color: $color3;
+  overflow: hidden;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+
+  a {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color1;
+    text-align: center;
+    padding: 14px 16px;
+    height: 10vh;
+    width:100%;
+
+    text-decoration: none;
+    flex-grow: 1;
+  }
+
+  a:hover {
+    background-color: $color2;
+    color: $color1;
+  }
+  a.active {
+    background-color: $color2;
+    color: $color1;
+  }
+
+
+ 
+}
+
+@media screen and (max-width: 768px){
+  .topnav{
+    flex-direction: column;
+  }
+}

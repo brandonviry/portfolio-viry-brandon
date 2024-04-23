@@ -1,0 +1,6 @@
+.iframe {
+    max-height: 99vh;
+    height: 80vh;
+    min-width: max-content;
+    flex-grow: 1;
+}
