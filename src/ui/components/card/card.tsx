@@ -1,32 +1,55 @@
 import "@/ui/components/card/card.css";
-import Image from "next/image";
 import Link from "next/link";
-import { use } from "react";
 
 interface CardProps {
   titre: string;
   contenue: string;
   type: string;
   url: string;
-  cover: string
+  cover: string;
 }
 
-export default function Card({ titre, contenue, type, url ,cover}: CardProps) {
-  return (
-    <div className="card-container" style={{ flexGrow: 1  , backgroundImage: `url(${(cover === ""? "https://i.ibb.co/DVNLFLg/rien.png":cover)})`,backgroundSize:"cover"}} >
-      <div className="card-item">
-        <Link  href={url} className="card-item_link">
-        <div className="card-item_image" >
+export default function Card({ titre, contenue, type, url, cover }: CardProps) {
+  // Fonction pour obtenir l'icône placeholder basée sur le type
+  const getPlaceholderIcon = () => {
+    switch (type.toLowerCase()) {
+      case 'web':
+      case 'website':
+        return '🌐';
+      case 'mobile':
+      case 'app':
+        return '📱';
+      case 'design':
+      case 'ui/ux':
+        return '🎨';
+      case 'backend':
+      case 'api':
+        return '⚙️';
+      case 'database':
+        return '🗄️';
+      case 'game':
+        return '🎮';
+      case 'ai':
+      case 'machine learning':
+        return '🤖';
+      default:
+        return '📁';
+    }
+  };
 
+  return (
+    <div className="metro-tile">
+      <Link href={url} className="metro-link">
+        <div className="metro-icon">
+          <span className="metro-placeholder-icon">
+            {getPlaceholderIcon()}
+          </span>
+        </div>
         
-            </div> 
-          <div className="card-item_box"  >
-            <div className="card-item_titre">{titre}</div>
-            <div className="card-item_contenue">{contenue}</div>
-            <div className="card-item_type">{type}</div>
-          </div>
-        </Link >
-      </div>
+        <div className="metro-label">
+          {titre}
+        </div>
+      </Link>
     </div>
   );
 }

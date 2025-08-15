@@ -6,59 +6,92 @@
   --color5: #ffffff;
 }
 
-.card-container {
-  background-color: var(--color2);
-  margin: 0.5rem;
-}
-
-.card-item_box {
-  display: flex;
-  background-color: var(--color3);
-  margin: 0px;
-  color: var(--color1);
+.metro-tile {
+  background: #4CAF50;
   width: 100%;
-  padding: 0.5rem;
-  opacity: 0.8;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  margin: 2px;
 }
 
-.card-item_link {
+.metro-tile:hover {
+  background: #45a049;
+  transform: scale(1.02);
+}
+
+.metro-link {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 20px 15px 15px 15px;
+  box-sizing: border-box;
 }
 
-.card-item_link:hover > .card-item_box {
-  opacity: 1;
-}
-.card-container:hover {
-  transform: scale(1.1);
-  border: 3px dashed var(--color5);
-  z-index: 2;
-}
-.card-container:active {
-  transform: scale(1.1);
-  border: 3px solid var(--color3);
-  z-index: 2;
+.metro-icon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.card-item_titre,
-.card-item_contenue,
-.card-item_type {
- font-size:responsive;
+.metro-placeholder-icon {
+  font-size: 48px;
+  line-height: 1;
+  display: block;
 }
 
-@media screen  and (min-width: 1281px){
-  .card-item_image {
-    width: calc(90/4*1vw);
-    height: calc(90/4*1vw);
+.metro-label {
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .metro-tile {
+    height: 130px;
   }
   
-  
-}
-
-
-  .card-item_image {
-    width: calc(90/4*1vw);
-    height: calc(90/4*1vw);
+  .metro-link {
+    padding: 15px 12px 12px 12px;
   }
   
+  .metro-placeholder-icon {
+    font-size: 40px;
+  }
+  
+  .metro-label {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .metro-tile {
+    height: 120px;
+  }
+  
+  .metro-link {
+    padding: 12px 10px 10px 10px;
+  }
+  
+  .metro-placeholder-icon {
+    font-size: 36px;
+  }
+  
+  .metro-label {
+    font-size: 12px;
+  }
+}
